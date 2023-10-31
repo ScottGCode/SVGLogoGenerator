@@ -2,20 +2,20 @@
 
 ## Description
 
-Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
-
-- What was your motivation?
-- Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
-- What problem does it solve?
-- What did you learn?
+As a freelance web developer I wanted a simple way to generate a logo for my projects so that I dont have to pay a graphic designer. I developed this application to be easy and straight forward so you can spend more time working on your code. This is a Node.js command-line application that takes in user input to generate a logo and save it as an SVG file. This application prompts the user to select a color and shape, provide text for the logo, and save the generated SVG to a `.svg` file. This application features Node.js filesystem and inquirer 8.2.4. This application also utilizes Jest for running the unit tests to ensure the code is working properly. This allows any user to devote more time working on the code instead of creating a logo from scratch. I learned how to work with more Node.js packages to dynamically prompt a user and generate files as well as test the code to ensure its functionality. 
 
 ## Installation
 
-What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
+To install this project and get the development enviroment up and running:
+
+1. Fork and clone the code from the repository provided in the GitHub link.
+2. Open the file in your code editor.
+3. In the terminal, run the command `npm install` to install the dependencies. 
+4. To invoke the application use the command `node index.js`. 
 
 ## Usage
 
-Provide instructions and examples for use. Include screenshots as needed.
+To use this command line application first open the file in the integrated terminal. Run the command `node index.js` to recieve the prompts for your SVG logo. Answer all the prompts that follow. Once you are finished you will recieve a "Success" message and your custom SVG logo will be generated. The SVG logo will be saved as `logo.svg`. 
 
 To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative file path, add it to your README using the following syntax:
 
@@ -23,7 +23,7 @@ To add a screenshot, create an `assets/images` folder in your repository and upl
 
 ## Credits
 
-University of Utah Coding Bootcamp Instructor and Teaching Assistants. Node.js documentation. Stack Overflow. W3 School's documentation. MDN WebDocs. SVG documentation.
+University of Utah Coding Bootcamp Instructor and Teaching Assistants. Node.js documentation. Stack Overflow. W3 School's documentation. MDN WebDocs. SVG documentation. Full-Stack Blog.
 
 ## License
 
@@ -49,22 +49,10 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-🏆 The previous sections are the bare minimum, and your project will ultimately determine the content of this document. You might also want to consider adding the following sections.
-
 ## Badges
 
 ![badmath](https://img.shields.io/github/languages/top/nielsenjared/badmath)
 
-Badges aren't necessary, but they demonstrate street cred. Badges let other developers know that you know what you're doing. Check out the badges hosted by [shields.io](https://shields.io/). You may not understand what they all represent now, but you will in time.
-
-## Features
-
-If your project has a lot of features, list them here.
-
-## How to Contribute
-
-If you created an application or package and would like other developers to contribute to it, you can include guidelines for how to do so. The [Contributor Covenant](https://www.contributor-covenant.org/) is an industry standard, but you can always write your own if you'd prefer.
-
 ## Tests
 
-Go the extra mile and write tests for your application. Then provide examples on how to run them here.
+To run the unit tests in this application, ensure that you have Jest installed as a dependency. To start the tests, in the terminal run the command `npm run test`. You will see there is 1 testing suite with 3 different tests for each shape to ensure they will render correctly.  
