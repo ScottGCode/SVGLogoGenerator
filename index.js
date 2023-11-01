@@ -1,7 +1,9 @@
+// Import fs, inquirer, and shapes. 
 const fs = require('fs');
 const inquirer = require('inquirer'); 
 const {Triangle, Square, Circle} = require('./lib/shapes.js') 
 
+// Svg class with a constructor and methods for rendering a logo based on user input. 
 class Svg{
     constructor(){
         this.textElement = ''
@@ -18,6 +20,7 @@ class Svg{
     }
 }
 
+// Questions array using inquirer.
 const questions = [
     {
         type: "list",
@@ -33,15 +36,16 @@ const questions = [
     {
         type: "input",
         name: "text",
-        message: "Insert the text for your logo. (3 characters max)",
+        message: "Insert the text for your logo. (3 characters max!)",
     },
     {
         type: "input",
         name: "textColor",
-        message: "Enter a color for the text on your logo",
+        message: "Enter a text color for your logo",
     },    
 ];
 
+// Function to write the data to a file and throw an error if one occurs. 
 function writeToFile(fileName, data) {
         console.log("Writing [" + data + "] to file [" + fileName + "]")
     fs.writeFile(fileName, data, function (err) {
@@ -52,13 +56,16 @@ function writeToFile(fileName, data) {
     });
 }
 
+// Init function.
 async function init() {
     console.log("Starting init");
         var svgString = "";
         var svgFile = "logo.svg";
     
+    // Inquirer used to prompt the user with questions. 
     const answers = await inquirer.prompt(questions);
 
+        // User text variable to ensure it is 1-3 characters.
         var userText = "";
         if (answers.text.length > 0 && answers.text.length < 4) {
             userText = answers.text;
@@ -67,13 +74,17 @@ async function init() {
             return;
         }
         console.log("User text: [" + userText + "]");
+        // Set user text color. 
         userTextColor = answers["textColor"];
         console.log("User font color: [" + userTextColor + "]");
+        // Set user shape color.
         userShapeColor = answers.shapeColor;
         console.log("User shape color: [" + userShapeColor + "]");
+        // Set user shape choice. 
         userShapeChoice = answers["shape"];
         console.log("User selected shape = [" + userShapeChoice + "]");
 
+// Variable declared to store user shape, check shape choice, and create new shape objects. 
 let userShape;
 if (userShapeChoice === "Square" || userShapeChoice === "square") {
     userShape = new Square();
@@ -90,6 +101,7 @@ if (userShapeChoice === "Square" || userShapeChoice === "square") {
 }
 userShape.setColor(userShapeColor);
 
+// New Svg instance with user values added for render. 
 var svg = new Svg();
 svg.setTextElement(userText, userTextColor);
 svg.setShapeElement(userShape);
