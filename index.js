@@ -47,18 +47,16 @@ const questions = [
 
 // Function to write the data to a file and throw an error if one occurs. 
 function writeToFile(fileName, data) {
-        console.log("Writing [" + data + "] to file [" + fileName + "]")
     fs.writeFile(fileName, data, function (err) {
         if (err) {
             return console.log(err);
         }
-        console.log("Generating SVG Logo Now!");
+        console.log("Success! Generated logo.svg");
     });
 }
 
-// Init function.
+// Init function and declare variables. 
 async function init() {
-    console.log("Starting init");
         var svgString = "";
         var svgFile = "logo.svg";
     
@@ -73,44 +71,41 @@ async function init() {
             console.log("Error, please enter 1-3 characters.");
             return;
         }
-        console.log("User text: [" + userText + "]");
-        // Set user text color. 
-        userTextColor = answers["textColor"];
-        console.log("User font color: [" + userTextColor + "]");
+        
+        // Set user input from answers.  
+        userShapeChoice = answers["shape"];
         // Set user shape color.
         userShapeColor = answers.shapeColor;
-        console.log("User shape color: [" + userShapeColor + "]");
-        // Set user shape choice. 
-        userShapeChoice = answers["shape"];
+        // Set user text color. 
+        userTextColor = answers["textColor"];
+        
+        // Log users input 
         console.log("User selected shape = [" + userShapeChoice + "]");
-
-// Variable declared to store user shape, check shape choice, and create new shape objects. 
+        console.log("User shape color: [" + userShapeColor + "]");
+        console.log("User text: [" + userText + "]");
+        console.log("User font color: [" + userTextColor + "]");
+        
+// Create new shape objects based on user choice. 
 let userShape;
-if (userShapeChoice === "Square" || userShapeChoice === "square") {
+if (answers.shape.toLowerCase() === 'square') {
     userShape = new Square();
-    console.log("User selected Square")
-}else if (userShapeChoice === "Circle" || userShapeChoice === "circle") {
-    userShape = new Circle(); 
-    console.log("User selected Cirlce"); 
-}else if (userShapeChoice === "Triangle" || userShapeChoice === "triangle") {
-    userShape = new Triangle(); 
-    console.log("User selected Triangle");
-}else {
-    console.log("Invalid Shape!");
+} else if (answers.shape.toLowerCase() === 'circle') {
+    userShape = new Circle();
+} else if (answers.shape.toLowerCase() === 'triangle') {
+    userShape = new Triangle();
+} else {
+    console.log('Invalid Shape!');
     return;
 }
-userShape.setColor(userShapeColor);
+userShape.setColor(answers.shapeColor);
 
-// New Svg instance with user values added for render. 
+// New Svg instance with user values for render. 
 var svg = new Svg();
 svg.setTextElement(userText, userTextColor);
 svg.setShapeElement(userShape);
 svgString = svg.render();
 
-console.log("Displaying shape:/n/n" + svgString);
-
-console.log("Logo generation complete!");
-console.log("Write shape to file...");
+// Write new svg string to file logo.svg
 writeToFile(svgFile, svgString);
 }
 init();
