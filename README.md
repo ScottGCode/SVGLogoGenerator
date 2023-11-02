@@ -2,7 +2,7 @@
 
 ## Description
 
-As a freelance web developer I wanted a simple way to generate a logo for my projects so that I dont have to pay a graphic designer. I developed this application to be easy and straight forward so you can spend more time working on your code. This is a Node.js command-line application that takes in user input to generate a logo and save it as an SVG file. This application prompts the user to select a color and shape, provide text for the logo, and save the generated SVG to a `.svg` file. This application features Node.js filesystem and inquirer 8.2.4. This application also utilizes Jest for running the unit tests to ensure the code is working properly. This allows any user to devote more time working on the code instead of creating a logo from scratch. I learned how to work with more Node.js packages to dynamically prompt a user and generate files as well as test the code to ensure its functionality. 
+As a freelance web developer I wanted a simple way to generate a logo for my projects so that I dont have to pay a graphic designer. I developed this application to be easy and straight forward so you can spend more time working on your code. This is a Node.js command-line application that takes in user input to generate a logo and save it as an SVG file. This application prompts the user to select a color and shape, provide text for the logo, and save the generated SVG to a `.svg` file. This application features Node.js fs and inquirer. This application also utilizes Jest for running the unit tests to ensure the code is working properly. This allows any user to devote more time working on the code instead of creating a logo from scratch. I learned how to work with object oriented programming and more Node.js packages to dynamically prompt a user and generate files as well as test the code to ensure its functionality. 
 
 ## Installation
 
@@ -15,15 +15,15 @@ To install this project and get the development enviroment up and running:
 
 ## Usage
 
-To use this command line application first open the file in the integrated terminal. Run the command `node index.js` to recieve the prompts for your SVG logo. Answer all the prompts that follow. Once you are finished you will recieve a "Success" message and your custom SVG logo will be generated. The SVG logo will be saved as `logo.svg`. 
+To use this command line application first open the file in the integrated terminal. Run the command `node index.js` to recieve the prompts for your SVG logo. Answer all the prompts that follow. Once you are finished you will recieve a "Success" message and your custom SVG logo will be generated. The SVG logo will be saved as `logo.svg`. Open the file in your broswer to see the logo.
 
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative file path, add it to your README using the following syntax:
+-  Demo:
 
-![alt text](assets/images/screenshot.png)
+![Video Demo](./Media/Untitled_%20Nov%201,%202023%2010_49%20PM.gif)
 
 ## Credits
 
-University of Utah Coding Bootcamp Instructor and Teaching Assistants. Node.js documentation. Stack Overflow. W3 School's documentation. MDN WebDocs. SVG documentation. Full-Stack Blog.
+University of Utah Coding Bootcamp Instructor and Teaching Assistants. Node.js documentation. Stack Overflow. W3 School's documentation. MDN WebDocs. SVG documentation. Full-Stack Blog. Screencastify.
 
 ## License
 
